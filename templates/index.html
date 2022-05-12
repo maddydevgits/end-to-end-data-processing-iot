@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta http-equiv="refresh" content="5">
+        <link rel = "stylesheet" type = "text/css" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel = "stylesheet" type = "text/css" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+        
+        html, body{
+            height: 100%;
+        }
+        
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        body {
+            background-color: #a5a5b1;
+            display: grid;
+            place-items: center;
+            
+        }
+        
+        .card {
+            background-color: #ffffff;
+            border-radius: 50px;
+            color: #6f707d;
+            font-family: 'Marcellus', serif;
+        }
+        
+        #heading{
+            font-size: 55px;    
+            color: #2b304d;
+        }
+        
+        .temp{
+            place-items: center;
+        }
+        
+        .temp-details > p >span, .grey{
+            color: #a3acc1;
+            font-size: 12px;
+        }
+        
+        .fa{
+            color: #a5a5b1
+        }
+        
+         *:focus{
+            outline: none;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4 col-sm-12 col-xs-12"> 
+                       <div class="card p-4">    
+                        
+                           <div class="d-flex">
+                               <h6 class="flex-grow-1">IoT Device Zone</h6>
+                               
+                           </div>
+                            
+                           <div class="d-flex flex-column temp mt-5 mb-3">
+                               <h1 class="mb-0 font-weight-bold" id="heading"> {{temp_data}}&deg; C </h1>
+                               <!-- <span class="small grey">Stormy</span> -->
+                           </div>
+                           
+                           <div class="d-flex">
+                               <div class="temp-details flex-grow-1">
+                                    <p class="my-1">
+                                        <img src="{{url_for('static',filename='2.png')}}" height="17px" >
+                
+                                       <span> {{hum_data}}  </span>
+                                    </p>
+    
+                                    <p class="my-1"> 
+                                       <i class="fa fa-tint mr-2" aria-hidden="true"></i>
+                                       <span> {{rain_data}} </span> 
+                                    </p>
+    
+                                   
+                               </div>
+                               
+                               <div>
+                                   <img src="{{url_for('static',filename='1.png')}}" width="100px">
+                               </div>
+                               
+                               
+                           </div>
+                            
+              
+                        </div>
+                </div>
+            </div>
+    
+    
+        </div>
+    </body>
+</html>
